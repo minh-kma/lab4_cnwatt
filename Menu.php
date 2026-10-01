@@ -8,5 +8,7 @@
         <li><a href="cookie.php">3.6. Cookie</a></li>
         <li><a href="function.php">3.7. Function</a></li>
         <li><a href="file.php">3.8 Đọc ghi file</a></li>
+        <li><a href="qldt.php">3.9 Quản lý SV (file)</a></li>
+        <li><a href="db.php">3.11 CSDL cơ bản</a></li>
     </ul>
 </aside>

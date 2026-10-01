@@ -38,3 +38,17 @@ footer { border-top: 1px solid #000; }
 
 .mang-input input { width: 55px; }
 .ma-tran td { padding: 2px 12px; }
+
+/* Nhiệm vụ 11 */
+.flash {
+    padding: 8px 12px; margin-bottom: 10px;
+    background: #e7f7e7; border-left: 4px solid green;
+}
+.flash.error { background: #fdecea; border-left-color: #c0392b; }
+.pagination a, .pagination span {
+    display: inline-block; padding: 4px 10px; margin: 0 2px;
+    border: 1px solid #ccc; text-decoration: none; color: #333;
+}
+.pagination .current {
+    background: #66afe9; color: #fff; border-color: #66afe9;
+}
