@@ -35,3 +35,6 @@ footer { border-top: 1px solid #000; }
 
 .form-table td, .info-table td { padding: 5px 8px; vertical-align: top; }
 .box { border: 1px solid red; padding: 10px; }
+
+.mang-input input { width: 55px; }
+.ma-tran td { padding: 2px 12px; }

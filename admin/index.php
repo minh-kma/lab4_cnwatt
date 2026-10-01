@@ -1,6 +1,7 @@
 <?php
 define('IN_ADMIN', true);
 require __DIR__ . '/../libs/session_init.php';
+require __DIR__ . '/../libs/cookie_helper.php';
 startSecureSession();
 
 $page = $_GET['page'] ?? 'home';
@@ -18,6 +19,15 @@ $daDangNhap = !empty($_SESSION['Username']);
 if (!$daDangNhap) {
     http_response_code(401);
 }
+if ($daDangNhap && empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(16));
+}
+
+// Thêm/xóa link yêu thích: ghi cookie phải làm trước khi có output
+if ($daDangNhap && $page === 'favourite' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    include __DIR__ . '/pages/favourite_action.php';
+    exit;
+}
 
 $basePath = '../'; // để Head.php trỏ đúng tới style.css và images/ từ thư mục admin
 
@@ -33,6 +43,9 @@ include __DIR__ . '/MenuAdmin.php';
         switch ($page) {
             case 'upload':
                 include __DIR__ . '/pages/upload.php';
+                break;
+            case 'favourite':
+                include __DIR__ . '/pages/favourite.php';
                 break;
             case 'home':
             default:
